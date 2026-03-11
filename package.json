@@ -1,0 +1,61 @@
+{
+  "name": "react-detect-overflow",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "===================== build ======================": "",
+    "build": "tsdown",
+    "====================== npm =======================": "",
+    "package:test": "npm pack --dry-run",
+    "package": "npm pack",
+    "prepack": "npm run build",
+    "==================================================": ""
+  },
+  "files": [
+    "dist/*"
+  ],
+  "keywords": [
+    "react",
+    "hooks",
+    "overflow",
+    "detect",
+    "resize"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rainymy/react-detect-overflow.git"
+  },
+  "author": "Rainymy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rainymy/react-detect-overflow/issues"
+  },
+  "homepage": "https://github.com/Rainymy/react-detect-overflow#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
+    "@types/react": "^19.2.14",
+    "publint": "^0.3.18",
+    "react": "^19.2.4",
+    "tsdown": "^0.21.1"
+  },
+  "sideEffects": false
+}

@@ -5,14 +5,17 @@ export default defineConfig({
   format: ["cjs", "esm"],
   treeshake: true,
   publint: true,
-  dts: {
-    emitJs: true,
-  }, // Generate declaration file (.d.ts),
+  dts: true, // Generate declaration file (.d.ts),
   sourcemap: false,
   minify: {
     compress: true,
     mangle: true,
     codegen: false,
+  },
+  outputOptions: {
+    comments: {
+      jsdoc: false,
+    },
   },
   clean: true,
 });

@@ -2,6 +2,8 @@ import type { RefObject } from "react";
 import { useDetectOverflow } from "./overflow";
 import type { DetectOverflow } from "./types";
 
+export { useDetectOverflow };
+
 /**
  * Detects horizontal (X-axis) overflow on a DOM element.
  * Reactively updates when the element is resized.

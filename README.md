@@ -10,7 +10,7 @@ React hooks for detecting horizontal and vertical overflow on DOM elements. Reac
 
 Detects horizontal overflow on an element.
 
-```tsx
+```ts
 import { useDetectOverflowX } from "react-detect-overflow";
 
 function MyComponent() {
@@ -30,7 +30,7 @@ function MyComponent() {
 
 Detects vertical overflow on an element.
 
-```tsx
+```js
 import { useDetectOverflowY } from "react-detect-overflow";
 
 function MyComponent() {
@@ -50,7 +50,7 @@ function MyComponent() {
 
 If you already have a ref on the element, pass it in to avoid creating a second one.
 
-```tsx
+```ts
 import { useRef } from "react";
 import { useDetectOverflowX } from "react-detect-overflow";
 

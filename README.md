@@ -2,16 +2,6 @@
 
 React hooks for detecting horizontal and vertical overflow on DOM elements. Reactively updates when the element is resized.
 
-## Installation
-
-```bash
-npm install react-detect-overflow
-```
-
-## Requirements
-
-- React `v16.8.0` or later
-
 ---
 
 ## Usage

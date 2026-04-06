@@ -13,14 +13,20 @@ Detects horizontal overflow on an element.
 ```tsx
 import { useDetectOverflowX } from "react-detect-overflow";
 
-function MyComponent() {
+export default function MyComponent() {
   const { isOverflowing, amount, ratio, ref } =
     useDetectOverflowX<HTMLDivElement>();
 
   return (
-    <div ref={ref} style={{ width: 200, overflow: "hidden" }}>
-      {isOverflowing && <span>Overflowing by {amount}px</span>}
-      Some very long content that might overflow...
+    <div ref={ref} style={{ width: "100px", background: "yellow" }}>
+      <div style={{ width: "132px", background: "teal" }}>
+        {/* Overflow by 32px */}
+        {isOverflowing ? (
+          <div>Overflowing by {amount}px</div>
+        ) : (
+          <div>No Overflow</div>
+        )}
+      </div>
     </div>
   );
 }
@@ -38,9 +44,15 @@ function MyComponent() {
     useDetectOverflowY<HTMLDivElement>();
 
   return (
-    <div ref={ref} style={{ height: 100, overflow: "hidden" }}>
-      {isOverflowing && <span>Overflowing by {amount}px</span>}
-      <p>Some very long content that might overflow vertically...</p>
+    <div ref={ref} style={{ height: "100px", background: "yellow" }}>
+      <div style={{ height: "231px", background: "teal" }}>
+        {/* Overflow by 131px */}
+        {isOverflowing ? (
+          <div>Overflowing by {amount}px</div>
+        ) : (
+          <div>No Overflow</div>
+        )}
+      </div>
     </div>
   );
 }
@@ -72,16 +84,18 @@ function MyComponent() {
 /**
  * A text title that bounces when overflowing.
  */
-function BouncyTitle2({ title }) {
+function BouncyTitle({ title }) {
   const { isOverflowing, amount, ratio, ref } =
     useDetectOverflowX<HTMLDivElement>();
+
+  const base_duration = 3;
 
   return (
     <div ref={ref} className={"container"}>
       <span
         className={`text_content ${isOverflowing ? "bounce" : ""}`}
         data-overflow={amount}
-        data-animation-duration={3 * ratio}
+        data-animation-duration={base_duration * ratio}
       >
         {title}
       </span>
